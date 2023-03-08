@@ -49,6 +49,11 @@ function play() {
                 if (userChoice === "Scissors" && computerChoice === "Rock" || userChoice === "Rock" && computerChoice === "Paper" || userChoice === "Paper" && computerChoice === "Scissors") {
                     computerTotal += 1
                     totalGames += 1;
+                    console.log(`${userName} selected ${userChoice} & the computer selected ${computerChoice}
+                    Games : ${totalGames}
+                    User : ${userTotal}
+                    Computer : ${computerTotal}
+                    `)
                     userChoice = "";
                     computerChoice = "";
                 }
@@ -56,6 +61,11 @@ function play() {
             function checkTie() {
                 if (userChoice === "Rock" && computerChoice === "Rock" || userChoice === "Paper" && computerChoice === "Paper" || userChoice === "Scissors" && computerChoice === "Scissors") {
                     totalGames += 1;
+                    console.log(`${userName} selected ${userChoice} & the computer selected ${computerChoice}
+                    Games : ${totalGames}
+                    User : ${userTotal}
+                    Computer : ${computerTotal}
+                    `)
                     userChoice = "";
                     computerChoice = "";
                 }
