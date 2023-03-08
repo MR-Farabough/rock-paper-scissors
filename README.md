@@ -4,6 +4,7 @@
 > To run game press the relating keyboard shortcut when you load the webpage
 
 > It is also recommend to refresh the page after the first `pop-up` appears
+- So you can see your first rounds results in console without having to quit
 # Google Chrome:
 - Windows/Linux: Press Ctrl+Shift+J or Ctrl+Shift+I
 - Mac: Press Command+Option+J or Command+Option+I
