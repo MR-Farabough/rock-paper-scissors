@@ -25,7 +25,7 @@ function getUserChoice() {
     } else if (binUserChoice === "scissors" || binUserChoice === "s") {
         userChoice = choices[2];
     } else {
-        getUserChoice();
+        console.log("error")
     }
     console.log(`${userName} selected '${userChoice}'`);
 };
@@ -86,8 +86,8 @@ function checkWin() {
     checkTie();
 }
 function start() {
+    getUserName();
     for (i =0;totalGames<5;i++) {
-        getUserName();
         getUserChoice();
         getComputerChoice();
         checkWin();
@@ -105,4 +105,8 @@ function playAgain() {
         playAgain();
     }
 }
+console.log("welcome")
+setTimeout(() => {
+    console.log("Delayed for 1 second.");
+  }, "1000");
 start()
