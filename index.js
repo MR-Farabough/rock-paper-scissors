@@ -13,6 +13,8 @@ function getUserName() {
         userName = userName;
     } else {
         userName = prompt("Enter name?");
+        localStorage.getItem('name')
+        localStorage.setItem('name', userName)
     }
 }
 function getUserChoice() {
@@ -101,9 +103,10 @@ function playAgain() {
         window.location.reload()
     } else if (userPlayAgain === "n" || userPlayAgain === "no") {
         gameOn = false;
+        localStorage.clear()
     } else {
         playAgain();
     }
 }
-
+window.location.reload()
 start()
