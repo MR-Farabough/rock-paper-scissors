@@ -9,16 +9,9 @@ let gameOn = true;
 let userPlayAgain = "";
 let output = "";
 
-function welcome() {
-    console.log("welcome")
-    setTimeout(() => {
-    alert("Delay...");
-  }, "3000");
-}
 function getUserName() {
     userName = prompt("Enter name?");
     return userName;
-
 }
 function getUserChoice() {
     let binUserChoice = prompt("(R)ock | (P)aper | (S)cissors");
@@ -113,5 +106,4 @@ function start() {
         checkGameOver();
     }
 }
-welcome()
 start()
