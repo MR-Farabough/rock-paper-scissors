@@ -7,13 +7,28 @@
 // if user wins 3 times game over
 // display a grind of scores maybe recent plays
 
-let userName = prompt("Enter name?")
-let computerChoice = ""
+let userName = prompt("Enter name?");
+let computerChoice = "";
+let userChoice = "";
+const choices = ["Rock","Paper","Scissors"];
 
+function getUserChoice() {
+    let binUserChoice = prompt("(R)ock | (P)aper | (S)cissors")
+    binUserChoice = binUserChoice.toLowerCase()
+    if (binUserChoice === "rock" || "r") { 
+        userChoice = choices[0]
+    } else if (binUserChoice === "paper" || "p") {
+        userChoice = choices[1]
+    } else {
+        userChoice = choices[2]
+    }
+    return console.log(userChoice)
+};
 
 function getComputerChoice() {
-    computerChoice = Math.floor(Math.random() * 3 +1)
+    let i = Math.floor(Math.random() * 3)
+    computerChoice = choices[i]
     return console.log(computerChoice)
-}
+};
 
-getComputerChoice()
+getComputerChoice();
