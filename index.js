@@ -22,12 +22,12 @@ function play() {
         } else {
             getUserChoice();
         }
-        return console.log(`${userName} selected '${userChoice}'`);
+        console.log(`${userName} selected '${userChoice}'`);
     };
     function getComputerChoice() {
         let i = Math.floor(Math.random() * 3);
         computerChoice = choices[i];
-        return console.log(`Computer selected '${computerChoice}'`);
+        console.log(`Computer selected '${computerChoice}'`);
     };
     
     function checkWin() {
@@ -36,10 +36,11 @@ function play() {
                 if (userChoice === "Rock" && computerChoice === "Scissors" || userChoice === "Paper" && computerChoice === "Rock" || userChoice === "Scissors" && computerChoice === "Paper") {
                     userTotal += 1;
                     totalGames += 1;
-                    console.log(`${userName} selected ${userChoice} & the computer selected ${computerChoice}
-                    Games : ${totalGames}
-                    User : ${userTotal}
-                    Computer : ${computerTotal}
+                    console.log(`
+${userName} selected ${userChoice} & the computer selected ${computerChoice}
+Games : ${totalGames}
+User : ${userTotal}
+Computer : ${computerTotal}
                     `)
                     userChoice = "";
                     computerChoice = "";
@@ -49,10 +50,11 @@ function play() {
                 if (userChoice === "Scissors" && computerChoice === "Rock" || userChoice === "Rock" && computerChoice === "Paper" || userChoice === "Paper" && computerChoice === "Scissors") {
                     computerTotal += 1
                     totalGames += 1;
-                    console.log(`${userName} selected ${userChoice} & the computer selected ${computerChoice}
-                    Games : ${totalGames}
-                    User : ${userTotal}
-                    Computer : ${computerTotal}
+                    console.log(`
+${userName} selected ${userChoice} & the computer selected ${computerChoice}
+Games : ${totalGames}
+User : ${userTotal}
+Computer : ${computerTotal}
                     `)
                     userChoice = "";
                     computerChoice = "";
@@ -61,10 +63,11 @@ function play() {
             function checkTie() {
                 if (userChoice === "Rock" && computerChoice === "Rock" || userChoice === "Paper" && computerChoice === "Paper" || userChoice === "Scissors" && computerChoice === "Scissors") {
                     totalGames += 1;
-                    console.log(`${userName} selected ${userChoice} & the computer selected ${computerChoice}
-                    Games : ${totalGames}
-                    User : ${userTotal}
-                    Computer : ${computerTotal}
+                    console.log(`
+${userName} selected ${userChoice} & the computer selected ${computerChoice}
+Games : ${totalGames}
+User : ${userTotal}
+Computer : ${computerTotal}
                     `)
                     userChoice = "";
                     computerChoice = "";
@@ -74,11 +77,15 @@ function play() {
             checkUserWin()
             checkComputerWin()
         }
+        getUserName();
+        getUserChoice();
+        getComputerChoice();
+        checkWin();
     }
-getUserName();
-checkWin();
-getUserChoice();
-getComputerChoice();
+    getUserName();
+    getUserChoice();
+    getComputerChoice();
+    checkWin();
 }
 
 play();
