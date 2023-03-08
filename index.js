@@ -1,3 +1,4 @@
+let userName = "";
 let computerChoice = "";
 let userChoice = "";
 let totalGames = 0;
@@ -7,7 +8,7 @@ const choices = ["Rock","Paper","Scissors"];
 
 function play() {
     function getUserName() {
-        let userName = prompt("Enter name?");
+        userName = prompt("Enter name?");
     }
     function getUserChoice() {
         let binUserChoice = prompt("(R)ock | (P)aper | (S)cissors");
@@ -31,16 +32,43 @@ function play() {
     
     function checkWin() {
         while (totalGames < 5) {
-            if (userChoice === "Rock" && computerChoice === "Rock") {
-                computerTotal += 1;
-                userTotal += 1;
-                totalGames += 1;
-                userChoice = "";
-                computerChoice = "";
+            function checkUserWin() {
+                if (userChoice === "Rock" && computerChoice === "Scissors" || userChoice === "Paper" && computerChoice === "Rock" || userChoice === "Scissors" && computerChoice === "Paper") {
+                    userTotal += 1;
+                    totalGames += 1;
+                    console.log(`${userName} selected ${userChoice} & the computer selected ${computerChoice}
+                    Games : ${totalGames}
+                    User : ${userTotal}
+                    Computer : ${computerTotal}
+                    `)
+                    userChoice = "";
+                    computerChoice = "";
+                }
             }
+            function checkComputerWin() {
+                if (userChoice === "Scissors" && computerChoice === "Rock" || userChoice === "Rock" && computerChoice === "Paper" || userChoice === "Paper" && computerChoice === "Scissors") {
+                    computerTotal += 1
+                    totalGames += 1;
+                    userChoice = "";
+                    computerChoice = "";
+                }
+            }
+            function checkTie() {
+                if (userChoice === "Rock" && computerChoice === "Rock" || userChoice === "Paper" && computerChoice === "Paper" || userChoice === "Scissors" && computerChoice === "Scissors") {
+                    totalGames += 1;
+                    userChoice = "";
+                    computerChoice = "";
+                }
+            }
+            checkTie()
+            checkUserWin()
+            checkComputerWin()
         }
     }
-    getUserName()
-    getUserChoice();
-    getComputerChoice();
+getUserName();
+checkWin();
+getUserChoice();
+getComputerChoice();
 }
+
+play();
