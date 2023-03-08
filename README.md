@@ -1,4 +1,6 @@
 # Rock / Paper / Scissors
+# Currently broken :/
+
 > Following the curriculum there is no gui yet
 
 > To run game press the relating keyboard shortcut when you load the webpage
