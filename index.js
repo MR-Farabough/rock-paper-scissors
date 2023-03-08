@@ -6,3 +6,14 @@
 // if user wins add a point 
 // if user wins 3 times game over
 // display a grind of scores maybe recent plays
+
+let userName = prompt("Enter name?")
+let computerChoice = ""
+
+
+function getComputerChoice() {
+    computerChoice = Math.floor(Math.random() * 3 +1)
+    return console.log(computerChoice)
+}
+
+getComputerChoice()
