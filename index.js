@@ -1,5 +1,3 @@
-// ask user for name
-// ask for user input (since its only in cli I will make shortcuts)
 // make sure they enter the allowed value
 // while game counter is under 5 games or one user hasn't won 3 times keep asking for input
 // create score values for each player
@@ -10,25 +8,28 @@
 let userName = prompt("Enter name?");
 let computerChoice = "";
 let userChoice = "";
+let totalGames = 0;
 const choices = ["Rock","Paper","Scissors"];
 
 function getUserChoice() {
-    let binUserChoice = prompt("(R)ock | (P)aper | (S)cissors")
-    binUserChoice = binUserChoice.toLowerCase()
-    if (binUserChoice === "rock" || "r") { 
-        userChoice = choices[0]
-    } else if (binUserChoice === "paper" || "p") {
-        userChoice = choices[1]
+    let binUserChoice = prompt("(R)ock | (P)aper | (S)cissors");
+    binUserChoice = binUserChoice.toLowerCase();
+    if (binUserChoice === "rock" || binUserChoice === "r") { 
+        userChoice = choices[0];
+    } else if (binUserChoice === "paper" || binUserChoice === "p") {
+        userChoice = choices[1];
+    } else if (binUserChoice === "scissors" || binUserChoice === "s") {
+        userChoice = choices[2];
     } else {
-        userChoice = choices[2]
+        getUserChoice();
     }
-    return console.log(userChoice)
+    return console.log(`${userName} selected '${userChoice}'`);
 };
 
 function getComputerChoice() {
-    let i = Math.floor(Math.random() * 3)
-    computerChoice = choices[i]
-    return console.log(computerChoice)
+    let i = Math.floor(Math.random() * 3);
+    computerChoice = choices[i];
+    return console.log(`Computer selected '${computerChoice}'`);
 };
-
+getUserChoice();
 getComputerChoice();
