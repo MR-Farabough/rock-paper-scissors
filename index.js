@@ -106,4 +106,4 @@ function start() {
         checkGameOver();
     }
 }
-start()
+// start()
