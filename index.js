@@ -58,6 +58,9 @@ function checkUserWin() {
         img = document.createElement('img')
         img.setAttribute('src', './imgs/tick.png')
         userNameDiv.append(img)
+        winner.innerText = `
+${userName} selected ${userChoice}
+${botName} selected ${computerChoice}`
         userChoice = "";
         computerChoice = "";
     }
@@ -71,6 +74,9 @@ function checkComputerWin() {
         img = document.createElement('img')
         img.setAttribute('src', './imgs/tick.png')
         computerNameDiv.append(img)
+        winner.innerText = `
+${userName} selected ${userChoice}
+${botName} selected ${computerChoice}`
         userChoice = "";
         computerChoice = "";
     }
@@ -83,6 +89,9 @@ function checkTie() {
         img = document.createElement('img')
         img.setAttribute('src', './imgs/tick.png')
         tieDiv.append(img)
+        winner.innerText = `
+${userName} selected ${userChoice}
+${botName} selected ${computerChoice}`
         userChoice = "";
         computerChoice = "";
         checkGameOver()

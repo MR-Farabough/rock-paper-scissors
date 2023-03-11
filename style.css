@@ -63,6 +63,7 @@ body {
 .score-container {
     font-family: 'Courier New', Courier, monospace;
     font-size: 35px;
+    color: white;
     display: flex;
     flex: auto;
     justify-content: space-between;
@@ -95,6 +96,7 @@ img {
 p#winner {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
+    color: white;
     font-size: 35px;
     padding: 20px;
     background-color: red;
