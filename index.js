@@ -107,3 +107,9 @@ function start() {
     }
 }
 // start()
+
+const rock = document.getElementById('rock')
+
+rock.addEventListener('click', (e) => {
+    console.log(e)
+})

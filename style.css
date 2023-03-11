@@ -1,9 +1,13 @@
+h1 {
+    text-align: center;
+}
+.hero-text {
+    padding-bottom: 50px;
+}
 .img-container {
     display: flex;
-    justify-content: space-evenly;
-    height: auto;
+    justify-content: center;
 }
-
 .rock {
     display: flex;
     justify-content: center;
@@ -11,8 +15,9 @@
     height: auto;
 }
 .rock-img {
-    width: 500px;
-    height: 500px;
+    border: 2px solid black;
+    width: auto;
+    height: 250px;
 }
 .paper {
     display: flex;
@@ -21,8 +26,9 @@
     height: auto;
 }
 .paper-img {
-    width: 500px;
-    height: 500px;
+    border: 2px solid black;
+    width: auto;
+    height: 250px;
 }
 .scissors {
     display: flex;
@@ -31,6 +37,8 @@
     height: auto;
 }
 .scissors-img {
-    width: 500px;
-    height: 500px;
+    padding: 15px;
+    border: 2px solid black;
+    width: auto;
+    height: 220px;
 }
