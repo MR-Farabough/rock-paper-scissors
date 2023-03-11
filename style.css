@@ -23,6 +23,9 @@ body {
 }
 .rock-img {
     border: 2px solid black;
+    border-left: 4px solid black;
+    border-bottom: 4px solid black;
+    border-top: 4px solid black;
     width: auto;
     height: 250px;
     background-color: rgb(255, 241, 40);
@@ -35,6 +38,8 @@ body {
 }
 .paper-img {
     border: 2px solid black;
+    border-bottom: 4px solid black;
+    border-top: 4px solid black;
     width: auto;
     height: 250px;
     background-color: rgb(255, 241, 40);
@@ -48,6 +53,9 @@ body {
 .scissors-img {
     padding: 15px;
     border: 2px solid black;
+    border-right: 4px solid black;
+    border-bottom: 4px solid black;
+    border-top: 4px solid black;
     width: auto;
     height: 220px;
     background-color: rgb(255, 241, 40);
