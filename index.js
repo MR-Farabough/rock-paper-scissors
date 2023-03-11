@@ -109,7 +109,14 @@ function start() {
 // start()
 
 const rock = document.getElementById('rock')
-
+const paper = document.getElementById('paper')
+const scissors = document.getElementById('scissors')
 rock.addEventListener('click', (e) => {
-    console.log(e)
+    console.log("rock was pressed")
+})
+paper.addEventListener('click', (e) => {
+    console.log("paper was pressed")
+})
+scissors.addEventListener('click', () => {
+    console.log("scissors was pressed")
 })
