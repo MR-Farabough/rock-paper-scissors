@@ -10,6 +10,7 @@ let userPlayAgain = "";
 let output = "";
 let userNameDiv = document.getElementById('userNameDiv')
 let computerNameDiv = document.getElementById('botNameDiv')
+let tieDiv = document.getElementById('tieDiv')
 const rock = document.getElementById('rock')
 const paper = document.getElementById('paper')
 const scissors = document.getElementById('scissors')
@@ -60,6 +61,7 @@ function checkUserWin() {
         userChoice = "";
         computerChoice = "";
     }
+    checkGameOver()
 }
 
 function checkComputerWin() {
@@ -71,28 +73,32 @@ function checkComputerWin() {
         computerNameDiv.append(img)
         userChoice = "";
         computerChoice = "";
-        return output;
     }
+    checkGameOver()
 }
 
 function checkTie() {
     if (userChoice === "Rock" && computerChoice === "Rock" || userChoice === "Paper" && computerChoice === "Paper" || userChoice === "Scissors" && computerChoice === "Scissors") {
         totalGames += 1;
-        output = console.log(`${userName} selected ${userChoice} & the computer selected ${computerChoice}
-Games : ${totalGames}
-User : ${userTotal}
-Computer : ${computerTotal}
-        `)
+        img = document.createElement('img')
+        img.setAttribute('src', './imgs/tick.png')
+        tieDiv.append(img)
         userChoice = "";
         computerChoice = "";
-        return output;
+        checkGameOver()
     }
 }
 
 function checkGameOver() {
-    if (userTotal > 4 || computerTotal > 4) {
+    if (userTotal >= 5 || computerTotal >= 5) {
         gameOn = false;
-        return playAgain();
+        if (userTotal > computerTotal) {
+            let winner = document.getElementById('winner')
+            winner.innerText = `${userName} won this game!`
+        } else {
+            let winner = document.getElementById('winner')
+            winner.innerText = `${botName} won this game!`
+        }
     } else {
         return gameOn = true;
     }
@@ -106,30 +112,43 @@ function playAgain() {
     } else if (userPlayAgain === "n" || userPlayAgain === "no") {
         return gameOn = false;
     } else {
-        return playAgain();
+        playAgain()
     }
 }
 
 rock.addEventListener('click', () => {
-    binUserChoice = "rock"
-    getUserChoice();
-    getComputerChoice();
-    checkWin();
-    checkGameOver();
+    if (gameOn) {
+        binUserChoice = "rock"
+        getUserChoice();
+        getComputerChoice();
+        checkWin();
+        checkGameOver();
+    } else {
+        playAgain()
+    }
+    
 })
 paper.addEventListener('click', () => {
-    binUserChoice = "paper"
-    getUserChoice();
-    getComputerChoice();
-    checkWin();
-    checkGameOver();
+    if (gameOn) {
+        binUserChoice = "paper"
+        getUserChoice();
+        getComputerChoice();
+        checkWin();
+        checkGameOver();
+    } else {
+        playAgain();
+    }
+
 })
 scissors.addEventListener('click', () => {
-    binUserChoice = "scissors"
-    getUserChoice();
-    getComputerChoice();
-    checkWin();
-    checkGameOver();
+    if (gameOn) {
+        binUserChoice = "scissors"
+        getUserChoice();
+        getComputerChoice();
+        checkWin();
+    } else {
+        playAgain()
+    }
 })
 
 function checkWin() {

@@ -3,7 +3,7 @@
     margin: 0;
 }
 body {
-    background-color: blue;
+    background-color: red;
 }
 .hero-text {
     text-align: center;
@@ -64,13 +64,38 @@ body {
     font-family: 'Courier New', Courier, monospace;
     font-size: 35px;
     display: flex;
+    flex: auto;
     justify-content: space-between;
     background-color: red;
     padding: 50px;
     margin-top: -4px;
 }
 
+#userNameDiv {
+    max-width: 300px;
+}
+
+#tieDiv {
+    max-width: 300px;
+}
+
+#botNameDiv{
+    max-width: 300px;
+}
+
 img {
     width: 10%;
     height: auto;
+}
+
+.img-container {
+    background-color: blue;
+}
+
+p#winner {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 35px;
+    padding: 20px;
+    background-color: red;
 }
