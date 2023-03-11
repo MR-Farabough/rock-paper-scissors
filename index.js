@@ -8,14 +8,28 @@ const choices = ["Rock","Paper","Scissors"];
 let gameOn = true;
 let userPlayAgain = "";
 let output = "";
+const rock = document.getElementById('rock')
+const paper = document.getElementById('paper')
+const scissors = document.getElementById('scissors')
+let userNameEL = document.getElementById('userName')
+
+rock.addEventListener('click', (e) => {
+    binUserChoice = "rock"
+})
+paper.addEventListener('click', (e) => {
+    binUserChoice = "paper"
+})
+scissors.addEventListener('click', () => {
+    binUserChoice = "scissors"
+})
 
 function getUserName() {
+    userName = "";
     userName = prompt("Enter name?");
-    return userName;
+    userNameEL.innerText = userName
 }
+
 function getUserChoice() {
-    let binUserChoice = prompt("(R)ock | (P)aper | (S)cissors");
-    binUserChoice = binUserChoice.toLowerCase();
     if (binUserChoice === "rock" || binUserChoice === "r") { 
         userChoice = choices[0];
     } else if (binUserChoice === "paper" || binUserChoice === "p") {
@@ -92,6 +106,7 @@ function playAgain() {
         return playAgain();
     }
 }
+
 function checkWin() {
     checkUserWin();
     checkComputerWin();
@@ -99,24 +114,11 @@ function checkWin() {
 }
 function start() {
     getUserName();
-    for (i =0;totalGames<5;i++) {
-        getUserChoice();
-        getComputerChoice();
-        checkWin();
-        checkGameOver();
-    }
+    // for (i =0;totalGames<5;i++) {
+    //     getUserChoice();
+    //     getComputerChoice();
+    //     checkWin();
+    //     checkGameOver();
+    // }
 }
-// start()
-
-const rock = document.getElementById('rock')
-const paper = document.getElementById('paper')
-const scissors = document.getElementById('scissors')
-rock.addEventListener('click', (e) => {
-    console.log("rock was pressed")
-})
-paper.addEventListener('click', (e) => {
-    console.log("paper was pressed")
-})
-scissors.addEventListener('click', () => {
-    console.log("scissors was pressed")
-})
+start()
