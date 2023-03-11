@@ -60,7 +60,7 @@ body {
     height: 220px;
     background-color: rgb(255, 241, 40);
 }
-.userNameDiv {
+.score-container {
     background-color: red;
     padding: 50px;
     margin-top: -4px;
